@@ -1,0 +1,32 @@
+
+ <div id="<%= dom_id gallery %>" class="w-1/5 border-2 border-black shadow-xl rounded-2xl">
+
+  <p class="">
+    <%= image_tag(gallery.image, class: "attached_image w-full rounded-t-xl h-48") if gallery.image.present? %>
+  </p>
+
+  <div class="my-2 font-bold mx-auto flex justify-center items-center">
+  <%= gallery.title %>
+</div>
+
+<div class="my-2 font-medium mx-auto flex justify-center items-center">
+  <%= gallery.description %>
+</div>
+
+
+  
+
+  <% if action_name != "show" %>
+    <div class="flex flex-col p-4 space-y-2">
+  <%= link_to edit_gallery_path(gallery), class: "mx-auto w-full rounded-lg py-2 px-3 bg-[#699D0E] font-medium text-center" do %>
+    Edit this gallery
+  <% end %>
+</div>
+
+    
+  <% end %>
+</div> 
+ 
+
+
+
